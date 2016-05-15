@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react'
-import TodoItem from '../TodoItem'
-import Footer from '../Footer'
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
-import style from './style.css'
+import TodoItem from './TodoItem.js'
+import Footer from './Footer.js'
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/filters'
+import style from './TodoList.css'
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,
@@ -11,7 +11,7 @@ const TODO_FILTERS = {
   [SHOW_COMPLETED]: todo => todo.completed
 }
 
-class MainSection extends Component {
+class TodoList extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = { filter: SHOW_ALL }
@@ -78,4 +78,4 @@ class MainSection extends Component {
   }
 }
 
-export default MainSection
+export default TodoList

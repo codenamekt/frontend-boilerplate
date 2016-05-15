@@ -1,8 +1,8 @@
-
-import React, { Component } from 'react'
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
+import CSSModules from 'react-css-modules';
 import classnames from 'classnames'
-import style from './style.css'
+import React, { Component } from 'react'
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/filters'
+import style from './Footer.css'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
@@ -16,7 +16,7 @@ class Footer extends Component {
     const itemWord = activeCount === 1 ? 'item' : 'items'
 
     return (
-      <span className={style.count}>
+      <span styleName='count'>
         <strong>{activeCount || 'No'}</strong> {itemWord} left
       </span>
     )
@@ -63,4 +63,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer
+export default CSSModules(Footer, style);

@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react'
-import TodoTextInput from '../TodoTextInput'
+import TodoTextInput from './TodoTextInput.js'
 import classnames from 'classnames'
-import style from './style.css'
+import style from './TodoItem.css'
 
 class TodoItem extends Component {
   constructor(props, context) {

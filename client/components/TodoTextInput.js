@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import style from './style.css'
+import style from './TodoTextInput.css'
 
 class TodoTextInput extends Component {
   constructor(props, context) {
