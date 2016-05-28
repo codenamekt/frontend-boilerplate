@@ -1,20 +1,31 @@
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { MuiThemeProvider, getMuiTheme } from 'material-ui/styles';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import { AppBar, TextField, Paper } from 'material-ui';
+import * as TodoActions from '../actions/todos';
 
-import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import Header from './Header.js'
-import TodoList from './TodoList.js'
-import * as TodoActions from '../actions/todos'
-import style from './App.css'
+const darkMuiTheme = getMuiTheme(darkBaseTheme);
 
 class App extends Component {
   render() {
     const { todos, actions, children } = this.props
     return (
-      <div className={style.normal}>
-        <Header addTodo={actions.addTodo} />
-        <TodoList todos={todos} actions={actions} />
-        {children}
+      <div>
+        <MuiThemeProvider muiTheme={darkMuiTheme}>
+          <div>
+            <AppBar
+              title="Todo"
+              iconClassNameRight="muidocs-icon-navigation-expand-more"
+            />
+            <Paper zDepth={1}>
+              <TextField
+                hintText="Hint Text"
+              />
+            </Paper>
+          </div>
+        </MuiThemeProvider>
       </div>
     )
   }
